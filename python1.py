@@ -23,8 +23,9 @@ while True:
     cek_complet = cek_anu['isComplete']
     cek_count = cek_anu['count']
     if cek_complet == False:
+        print('Boss anda sudah klaim lo')
         break
-    if cek_count == 3:
+    if cek_count == 10:
         print('Udah Complet Boss!')
         break
     cek_asu = requests.post(url_ad, headers=headers, data=data2)
