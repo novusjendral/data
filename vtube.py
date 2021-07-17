@@ -15,14 +15,15 @@ while True:
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
 
-    data1 = '{"userId":"815302","sessionToken":"aZ7wI8ChQ87AnPu","virtualDeviceId":"16ad0a6ddd6a1a8ecc9a01eb1dd6bab5","timestamp":1626180031499,"version":"3.0.6","sign":"67a4d548ffecfb6bcf185fff99b78cc4"}'
-    data2 = '{"userId":"815302","sessionToken":"aZ7wI8ChQ87AnPu","virtualDeviceId":"16ad0a6ddd6a1a8ecc9a01eb1dd6bab5","timestamp":1626180433590,"version":"3.0.6","sign":"bd60aec23f378ad69be9a8c4d257fb47"}'
+    data1 = '{"userId": "815302","sessionToken": "WVdAHwja4W7sxzL","virtualDeviceId": "46707c48d534bcec16664273e9cd232f","timestamp": 1626424712340,"version": "3.0.8","sign": "97c09fc182a9b822afd86650aa25baf9"}'
+    data2 = data1
     cek_count = requests.post(url_api, headers=headers, data=data1)
+    print(cek_count.text)
     cek_anu = cek_count.json()
     cek_anu = cek_anu['value']
     cek_complet = cek_anu['isComplete']
     cek_count = cek_anu['count']
-    if cek_complet == False:
+    if cek_complet == True:
         print('Boss anda sudah klaim lo')
         break
     if cek_count == 10:
